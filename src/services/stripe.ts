@@ -388,7 +388,13 @@ class StripeService {
       )
 
       if (!paymentIntentResponse.success || !paymentIntentResponse.data) {
-        return paymentIntentResponse
+        return {
+          success: false,
+          error: paymentIntentResponse.error || {
+            code: 'CREATE_CLEARANCE_PAYMENT_ERROR',
+            message: 'Failed to create clearance payment'
+          }
+        }
       }
 
       const paymentIntent: PaymentIntent = {

@@ -117,7 +117,13 @@ class PinataService {
       const uploadResponse = await this.uploadFile(file, metadata, onProgress)
 
       if (!uploadResponse.success || !uploadResponse.data) {
-        return uploadResponse
+        return {
+          success: false,
+          error: uploadResponse.error || {
+            code: 'LICENSE_UPLOAD_ERROR',
+            message: 'Failed to upload license document'
+          }
+        }
       }
 
       const document: Document = {
@@ -161,7 +167,6 @@ class PinataService {
   ): Promise<APIResponse<Document[]>> {
     try {
       const documents: Document[] = []
-      let totalProgress = 0
 
       for (let i = 0; i < files.length; i++) {
         const file = files[i]
@@ -177,7 +182,6 @@ class PinataService {
 
         const fileProgress = (progress: number) => {
           const overallProgress = ((i * 100) + progress) / files.length
-          totalProgress = overallProgress
           onProgress?.(overallProgress)
         }
 
@@ -255,7 +259,13 @@ class PinataService {
       })
 
       if (!uploadResponse.success || !uploadResponse.data) {
-        return uploadResponse
+        return {
+          success: false,
+          error: uploadResponse.error || {
+            code: 'CLEARANCE_DATA_UPLOAD_ERROR',
+            message: 'Failed to upload clearance data'
+          }
+        }
       }
 
       const document: Document = {
@@ -343,7 +353,19 @@ class PinataService {
     try {
       const response = await this.client.delete(`/pinning/unpin/${ipfsHash}`)
 
-      return response
+      if (response.success) {
+        return {
+          success: true
+        }
+      } else {
+        return {
+          success: false,
+          error: response.error || {
+            code: 'UNPIN_ERROR',
+            message: 'Failed to unpin file'
+          }
+        }
+      }
     } catch (error) {
       return {
         success: false,

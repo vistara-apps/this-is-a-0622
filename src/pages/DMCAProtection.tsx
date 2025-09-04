@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Shield, Upload, AlertTriangle, CheckCircle, FileText, Send } from 'lucide-react'
+import { useState } from 'react'
+import { Upload, AlertTriangle, CheckCircle, FileText, Send } from 'lucide-react'
 import DMCAAlert from '../components/DMCAAlert'
 
 interface DMCANotice {

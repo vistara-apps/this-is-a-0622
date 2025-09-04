@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { FileCheck, Download, Send, Clock, CheckCircle, AlertTriangle } from 'lucide-react'
 import LicenseForm from '../components/LicenseForm'
 

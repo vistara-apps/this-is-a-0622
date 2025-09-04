@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { 
   Upload, 
@@ -6,7 +5,6 @@ import {
   FileCheck, 
   Shield, 
   TrendingUp,
-  Clock,
   CheckCircle,
   AlertTriangle
 } from 'lucide-react'
