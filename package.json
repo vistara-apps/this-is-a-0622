@@ -17,7 +17,9 @@
     "framer-motion": "^10.0.0",
     "react-dropzone": "^14.2.0",
     "recharts": "^2.8.0",
-    "clsx": "^2.0.0"
+    "clsx": "^2.0.0",
+    "@supabase/supabase-js": "^2.38.0",
+    "@stripe/stripe-js": "^2.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

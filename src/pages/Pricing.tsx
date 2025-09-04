@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Check, Star, Zap } from 'lucide-react'
 import { useSubscription } from '../contexts/SubscriptionContext'
 

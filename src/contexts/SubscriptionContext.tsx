@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useState, ReactNode } from 'react'
 
 interface SubscriptionContextType {
   tier: 'free' | 'pro' | 'artist'
@@ -27,8 +27,8 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
     setTier(newTier)
     setUsage(prev => ({
       ...prev,
-      maxSearches: newTier === 'free' ? 10 : 1000,
-      maxClearances: newTier === 'free' ? 3 : 100
+      maxSearches: 1000, // Pro and Artist tiers get 1000 searches
+      maxClearances: 100 // Pro and Artist tiers get 100 clearances
     }))
   }
 

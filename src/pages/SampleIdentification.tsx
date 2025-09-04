@@ -1,5 +1,4 @@
-import React, { useState, useCallback } from 'react'
-import { useDropzone } from 'react-dropzone'
+import { useState } from 'react'
 import { Upload, Search, Music, AlertCircle, CheckCircle, Clock } from 'lucide-react'
 import AudioUploader from '../components/AudioUploader'
 import SampleInfoCard from '../components/SampleInfoCard'
