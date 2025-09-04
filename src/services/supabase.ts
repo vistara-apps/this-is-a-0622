@@ -1,7 +1,7 @@
 import { createClient, SupabaseClient, User as SupabaseUser } from '@supabase/supabase-js'
 import { supabaseConfig } from '../config'
-import { User, Project, Sample, DMCANotice, LibrarySample, Subscription } from '../types'
-import { SupabaseAuthResponse, SupabaseQueryResponse, APIResponse } from '../types/api'
+import { User, Project, Sample, LibrarySample } from '../types'
+import { APIResponse } from '../types/api'
 
 class SupabaseService {
   private client: SupabaseClient

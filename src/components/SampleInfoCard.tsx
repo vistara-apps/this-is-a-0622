@@ -1,4 +1,3 @@
-import React from 'react'
 import { Music, User, Building2, Clock, CheckCircle, AlertTriangle, XCircle } from 'lucide-react'
 
 interface Sample {
@@ -21,7 +20,7 @@ interface SampleInfoCardProps {
 export default function SampleInfoCard({ 
   sample, 
   onClearSample,
-  variant = 'identified'
+  variant: _variant = 'identified'
 }: SampleInfoCardProps) {
   const getStatusIcon = (status: string) => {
     switch (status) {

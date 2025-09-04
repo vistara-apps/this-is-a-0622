@@ -1,5 +1,4 @@
-import React from 'react'
-import { AlertTriangle, CheckCircle, Clock, Shield, ExternalLink } from 'lucide-react'
+import { AlertTriangle, CheckCircle, Shield, ExternalLink } from 'lucide-react'
 
 interface DMCANotice {
   id: string

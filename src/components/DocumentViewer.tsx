@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { FileText, Download, Eye, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -27,7 +27,7 @@ export default function DocumentViewer({
   const [isLoading, setIsLoading] = useState(true)
 
   const handleDownload = () => {
-    const link = document.createElement('a')
+    const link = window.document.createElement('a')
     link.href = document.url
     link.download = document.name
     link.click()
