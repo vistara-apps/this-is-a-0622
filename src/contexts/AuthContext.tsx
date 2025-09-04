@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useState, ReactNode } from 'react'
 
 interface User {
   userId: string
@@ -23,7 +23,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     subscriptionTier: 'pro'
   })
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, _password: string) => {
     // Mock login - replace with actual API call
     setUser({
       userId: '1',
@@ -36,7 +36,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null)
   }
 
-  const signup = async (email: string, password: string) => {
+  const signup = async (email: string, _password: string) => {
     // Mock signup - replace with actual API call
     setUser({
       userId: Date.now().toString(),
